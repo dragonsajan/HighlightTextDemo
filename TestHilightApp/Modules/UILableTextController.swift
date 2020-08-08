@@ -10,21 +10,27 @@ import UIKit
 
 class UILableTextController: UIViewController {
 
+    @IBOutlet weak var sampleTextView: UITextView!
+    @IBOutlet weak var sampleLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        // To dismiss keyboard
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        self.view.addGestureRecognizer(tap)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        // handling code
+        self.view.endEditing(true)
     }
-    */
 
+
+    //MARK: - Button Pressed Event
+    @IBAction func updateLablePressed(_ sender: Any) {
+        sampleLabel.text = sampleTextView.text
+        sampleLabel.highlightAllText()
+    }
+    
 }

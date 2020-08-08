@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zx6-Bu-Jgn">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="b54-KC-JIP">
+            <objects>
+                <navigationController id="zx6-Bu-Jgn" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qOq-nG-oy7">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6fH-Wn-6q2" kind="relationship" relationship="rootViewController" id="FGB-md-0cp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2no-Ce-YnP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-910" y="84"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Qz8-0o-Ud0">
+            <objects>
+                <viewController id="6fH-Wn-6q2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R2D-bC-TGd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="N86-Bm-LA0">
+                                <rect key="frame" x="30" y="320" width="354" height="210"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3nj-Wl-nZz">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="s4S-As-5UC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="UITextView Sample">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="fMB-Wg-fm7" kind="push" id="oK4-Or-JOk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="972-xi-Dt6">
+                                        <rect key="frame" x="0.0" y="80" width="354" height="50"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ULK-kD-Dzl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="UILabel Sample">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="push" id="SiT-Z9-fiX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRx-Er-AAh">
+                                        <rect key="frame" x="0.0" y="160" width="354" height="50"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="N6e-MU-37w"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="CILayer Sample">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="gmE-nQ-oei" kind="push" id="j66-uc-aOy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Jhi-6S-7NK" firstAttribute="trailing" secondItem="N86-Bm-LA0" secondAttribute="trailing" constant="30" id="1af-xV-cha"/>
+                            <constraint firstItem="N86-Bm-LA0" firstAttribute="leading" secondItem="Jhi-6S-7NK" secondAttribute="leading" constant="30" id="sDU-Qc-gli"/>
+                            <constraint firstItem="N86-Bm-LA0" firstAttribute="centerY" secondItem="Jhi-6S-7NK" secondAttribute="centerY" constant="-50" id="swl-wV-RUl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jhi-6S-7NK"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LzG-Pc-FwE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r52-FI-QRp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-67" y="86"/>
+        </scene>
+        <!--Lable Text Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="UILableTextController" customModule="TestHighlight" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="is6-y5-ali">
+                                <rect key="frame" x="50" y="118" width="314" height="714"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5eC-mo-qRE">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="jKl-dt-3ar"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9O-H2-Wlq">
+                                        <rect key="frame" x="0.0" y="230" width="314" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="rLI-AQ-7JU"/>
+                                        </constraints>
+                                        <state key="normal" title="Highlight Above Text to UILabel"/>
+                                        <connections>
+                                            <action selector="updateLablePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2rP-HK-RWP"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UILabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14a-6E-pGw">
+                                        <rect key="frame" x="0.0" y="290" width="314" height="424"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="is6-y5-ali" secondAttribute="bottom" constant="30" id="4yB-1U-RcZ"/>
+                            <constraint firstItem="is6-y5-ali" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="JLS-zK-xfP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="is6-y5-ali" secondAttribute="trailing" constant="50" id="jRK-vS-7sg"/>
+                            <constraint firstItem="is6-y5-ali" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="s1y-qB-svX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mSQ-mE-AJS"/>
+                    <connections>
+                        <outlet property="sampleLabel" destination="14a-6E-pGw" id="3Qt-dt-1LM"/>
+                        <outlet property="sampleTextView" destination="5eC-mo-qRE" id="4RZ-3U-xAf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1110" y="84"/>
+        </scene>
+        <!--Text View Test Controller-->
+        <scene sceneID="bYj-KF-wV5">
+            <objects>
+                <viewController id="fMB-Wg-fm7" customClass="UITextViewTestController" customModule="TestHighlight" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Rd-vk-e4f">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0r0-Gy-iDe">
+                                <rect key="frame" x="50" y="118" width="314" height="300.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please type to test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ye-XT-P4F">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="r3V-bG-Af5">
+                                        <rect key="frame" x="0.0" y="50.5" width="314" height="250"/>
+                                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="1eN-qU-P94"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0r0-Gy-iDe" firstAttribute="top" secondItem="4Mn-i3-bSQ" secondAttribute="top" constant="30" id="2dU-Hl-YXT"/>
+                            <constraint firstItem="4Mn-i3-bSQ" firstAttribute="trailing" secondItem="0r0-Gy-iDe" secondAttribute="trailing" constant="50" id="xhu-Ic-fkr"/>
+                            <constraint firstItem="0r0-Gy-iDe" firstAttribute="leading" secondItem="4Mn-i3-bSQ" secondAttribute="leading" constant="50" id="xx8-Ry-gNJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4Mn-i3-bSQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HXO-uI-heH"/>
+                    <connections>
+                        <outlet property="highlightTextView" destination="r3V-bG-Af5" id="Nku-kL-72Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZTh-U0-jYc" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1109" y="-643"/>
+        </scene>
+        <!--Text Layer Test Controller-->
+        <scene sceneID="vaa-e2-77B">
+            <objects>
+                <viewController id="gmE-nQ-oei" customClass="CATextLayerTestController" customModule="TestHighlight" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J4m-7b-3S0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="06a-IX-10W">
+                                <rect key="frame" x="50" y="118" width="314" height="590"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fX3-uu-Viv">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="saw-2w-Dcz"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7i7-Y3-T4s">
+                                        <rect key="frame" x="0.0" y="230" width="314" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="vEw-Qh-mqr"/>
+                                        </constraints>
+                                        <state key="normal" title="Create CATextLayer of above text"/>
+                                        <connections>
+                                            <action selector="createLayerPressed:" destination="gmE-nQ-oei" eventType="touchUpInside" id="sTp-zz-z7X"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rj4-M9-afR">
+                                        <rect key="frame" x="0.0" y="290" width="314" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="7H3-9J-fzV"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="06a-IX-10W" firstAttribute="leading" secondItem="ier-FG-54z" secondAttribute="leading" constant="50" id="8aR-H5-p7V"/>
+                            <constraint firstItem="ier-FG-54z" firstAttribute="trailing" secondItem="06a-IX-10W" secondAttribute="trailing" constant="50" id="KQY-E3-OHF"/>
+                            <constraint firstItem="06a-IX-10W" firstAttribute="top" secondItem="ier-FG-54z" secondAttribute="top" constant="30" id="O1O-mR-3dP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ier-FG-54z"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ntw-Fy-cYq"/>
+                    <connections>
+                        <outlet property="sampleTextView" destination="fX3-uu-Viv" id="gZF-YY-gzF"/>
+                        <outlet property="sampleView" destination="rj4-M9-afR" id="dUg-8w-6G6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kUf-co-KP1" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1109" y="821"/>
+        </scene>
+    </scenes>
+</document>
