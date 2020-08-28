@@ -102,7 +102,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="is6-y5-ali">
-                                <rect key="frame" x="50" y="118" width="314" height="714"/>
+                                <rect key="frame" x="50" y="118" width="314" height="644"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5eC-mo-qRE">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="200"/>
@@ -125,18 +125,38 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UILabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14a-6E-pGw">
-                                        <rect key="frame" x="0.0" y="290" width="314" height="424"/>
+                                        <rect key="frame" x="0.0" y="290" width="314" height="354"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nfE-iG-py2">
+                                <rect key="frame" x="50" y="798" width="338" height="60.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfn-w4-46a">
+                                        <rect key="frame" x="0.0" y="0.0" width="338" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="8" minValue="8" maxValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="uXn-o1-kv6">
+                                        <rect key="frame" x="-2" y="30.5" width="342" height="31"/>
+                                        <connections>
+                                            <action selector="changeFontSize:" destination="BYZ-38-t0r" eventType="valueChanged" id="erD-uz-rDL"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="is6-y5-ali" secondAttribute="bottom" constant="30" id="4yB-1U-RcZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="is6-y5-ali" secondAttribute="bottom" constant="100" id="4yB-1U-RcZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nfE-iG-py2" secondAttribute="trailing" constant="26" id="52X-PH-YgI"/>
                             <constraint firstItem="is6-y5-ali" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="JLS-zK-xfP"/>
+                            <constraint firstItem="nfE-iG-py2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="KeB-a1-6K6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nfE-iG-py2" secondAttribute="bottom" constant="3.5" id="VOa-X5-vZS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="is6-y5-ali" secondAttribute="trailing" constant="50" id="jRK-vS-7sg"/>
                             <constraint firstItem="is6-y5-ali" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="s1y-qB-svX"/>
                         </constraints>
@@ -161,7 +181,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0r0-Gy-iDe">
-                                <rect key="frame" x="50" y="118" width="314" height="300.5"/>
+                                <rect key="frame" x="50" y="118" width="314" height="391"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please type to test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ye-XT-P4F">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="20.5"/>
@@ -179,6 +199,23 @@
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="30u-dZ-WPd">
+                                        <rect key="frame" x="0.0" y="330.5" width="314" height="60.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3up-Z4-LSk">
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="8" minValue="8" maxValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="RUL-8t-vtU">
+                                                <rect key="frame" x="-2" y="30.5" width="318" height="31"/>
+                                                <connections>
+                                                    <action selector="changeFontSize:" destination="fMB-Wg-fm7" eventType="valueChanged" id="xOe-Qg-7r1"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>

@@ -14,8 +14,9 @@ extension UILabel {
     
     func highlightAllText(color: UIColor = UIColor.yellow) {
         
+        self.font = font.withSize(CGFloat(Int(self.font.pointSize)))
         guard let testString = self.text, let font = self.font, let textColor = self.textColor else { return }
-                 
+        
         let titleParagraphStyle = NSMutableParagraphStyle()
         titleParagraphStyle.alignment = .center
 
@@ -41,7 +42,7 @@ extension UILabel {
 
     var lines: [String]? {
 
-        guard let text = text, let font = font else { return nil }
+        guard let text = self.text, let font = self.font else { return nil }
 
         let attStr = NSMutableAttributedString(string: text)
         attStr.addAttribute(NSAttributedString.Key.font, value: font, range: NSRange(location: 0, length: attStr.length))
@@ -51,7 +52,7 @@ extension UILabel {
 
         // size needs to be adjusted, because frame might change because of intelligent word wrapping of iOS
         let size = sizeThatFits(CGSize(width: self.frame.width, height: .greatestFiniteMagnitude))
-        path.addRect(CGRect(x: 0, y: 0, width: size.width, height: size.height), transform: .identity)
+        path.addRect(CGRect(x: 0, y: 0, width: size.width, height: .greatestFiniteMagnitude), transform: .identity)
 
         let frame = CTFramesetterCreateFrame(frameSetter, CFRangeMake(0, attStr.length), path, nil)
         guard let lines = CTFrameGetLines(frame) as? [Any] else { return nil }
@@ -67,6 +68,7 @@ extension UILabel {
         }
         return linesArray
     }
+    
 }
 
 
@@ -86,6 +88,7 @@ extension UITextView {
             attributes: [.font: font,
                          .foregroundColor: textColor,
             .paragraphStyle: titleParagraphStyle])
+        
 
         for text in self.lines ?? [] {
             let newText = text.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -106,32 +109,16 @@ extension UITextView {
     
     var lines: [String]? {
 
-        guard let text = text, let font = font else { return nil }
-
-        let attStr = NSMutableAttributedString(string: text)
-        attStr.addAttribute(NSAttributedString.Key.font, value: font, range: NSRange(location: 0, length: attStr.length))
-
-        let frameSetter = CTFramesetterCreateWithAttributedString(attStr as CFAttributedString)
-        let path = CGMutablePath()
-
-        // size needs to be adjusted, because frame might change because of intelligent word wrapping of iOS
-        let size = sizeThatFits(CGSize(width: self.frame.width, height: .greatestFiniteMagnitude))
-        path.addRect(CGRect(x: 0, y: 0, width: size.width, height: size.height), transform: .identity)
-
-        let frame = CTFramesetterCreateFrame(frameSetter, CFRangeMake(0, attStr.length), path, nil)
-        guard let lines = CTFrameGetLines(frame) as? [Any] else { return nil }
-
         var linesArray: [String] = []
-
-        for line in lines {
-            let lineRef = line as! CTLine
-            let lineRange = CTLineGetStringRange(lineRef)
-            let range = NSRange(location: lineRange.location, length: lineRange.length)
-            let lineString = (text as NSString).substring(with: range)
-            linesArray.append(lineString)
+        
+        self.layoutManager.enumerateLineFragments(forGlyphRange: NSRange(location: 0, length: text.count)) { (rect, usedRect, textContainer, glyphRange, stop) in
+            let characterRange = self.layoutManager.characterRange(forGlyphRange: glyphRange, actualGlyphRange: nil)
+            let line = (self.text as NSString).substring(with: characterRange)
+            linesArray.append(line)
         }
         return linesArray
     }
+    
 }
 
 
@@ -184,7 +171,7 @@ extension CATextLayer {
             tempTestString = "\(tempTestString ?? "")\n"
         }
 
-        guard let text = tempTestString, let font = font else { return nil }
+        guard let text = tempTestString, let font = self.font else { return nil }
 
         let attStr = NSMutableAttributedString(string: text)
         attStr.addAttribute(NSAttributedString.Key.font, value: font, range: NSRange(location: 0, length: attStr.length))
@@ -194,7 +181,7 @@ extension CATextLayer {
 
         // size needs to be adjusted, because frame might change because of intelligent word wrapping of iOS
         let size = text.size(OfFont: font as! UIFont)  //sizeThatFits(CGSize(width: self.frame.width, height: .greatestFiniteMagnitude))
-        path.addRect(CGRect(x: 0, y: 0, width: size.width, height: size.height), transform: .identity)
+        path.addRect(CGRect(x: 0, y: 0, width: size.width, height: .greatestFiniteMagnitude), transform: .identity)
 
         let frame = CTFramesetterCreateFrame(frameSetter, CFRangeMake(0, attStr.length), path, nil)
         guard let lines = CTFrameGetLines(frame) as? [Any] else { return nil }
@@ -258,5 +245,8 @@ extension String {
     func size(OfFont font: UIFont) -> CGSize {
            return (self as NSString).size(withAttributes: [NSAttributedString.Key.font: font])
        }
+    
+    
+    
 }
 

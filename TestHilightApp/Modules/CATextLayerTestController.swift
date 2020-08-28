@@ -36,9 +36,10 @@ class CATextLayerTestController: UIViewController {
             self.sampleView.layer.sublayers?.forEach { $0.removeFromSuperlayer() }
         }
         
+        
         caTextLayer = CATextLayer()
         caTextLayer?.string = sampleTextView.text
-        caTextLayer?.frame = sampleView.bounds
+        caTextLayer?.frame = CGRect(x:0, y:0, width:sampleTextView.bounds.width, height:sampleTextView.bounds.height)
         caTextLayer?.backgroundColor = UIColor.yellow.cgColor
         
         

@@ -25,6 +25,25 @@ class UITextViewTestController: UIViewController, UITextViewDelegate {
         self.view.endEditing(true)
     }
     
+    @IBAction func changeFontSize(_ sender: UISlider) {
+        let text = highlightTextView.text
+        highlightTextView.text = ""
+        highlightTextView.font = highlightTextView.font?.withSize(CGFloat(sender.value))
+        highlightTextView.text = text
+        DispatchQueue.main.async {
+            self.highlightTextView.highlightAllText()
+        }
+        
+    }
+    
+    
+//    - (IBAction)sliderTap:(UISlider*)sender {
+//        tvVarse.text=@"";//Just provided blank text before loading textview again
+//        tvVarse.font = [tvVarse.font fontWithSize:sender.value];
+//        tvVarse.text=strTextToShow;
+//
+//    }
+//
     
     //MARK: - UITextView Delegate
     func textViewDidChange(_ textView: UITextView) {
